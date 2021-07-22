@@ -10,6 +10,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,12 +27,18 @@ public @Data class BiddingData {
 	@Id
 	private String bidId;
 
-	@Column(name = "transporterId")
+	@NotBlank(message = "Transporter Id can not be null")
 	private String transporterId;
-	@Column(name = "loadId")
+	@NotBlank(message = "Load Id can not be null")
 	private String loadId;
-	private Long rate;
+
+	@NotNull(message = "Current Bid can not be null")
+	private Long currentBid;
+
+	private Long previousBid;
+
 	@Enumerated(EnumType.STRING)
+	@NotNull(message = "Unit can not be null")
 	public Unit unitValue;
 
 	public enum Unit {

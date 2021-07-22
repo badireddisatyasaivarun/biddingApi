@@ -13,7 +13,7 @@ public interface BiddingService {
 
 	public BidPostResponse addBid(BidPostRequest bidPostRequest);
 
-	public List<BiddingData> getBid(Integer pageNo, String loadId,String transporterId);
+	public List<BiddingData> getBid(Integer pageNo, String loadId, String transporterId);
 
 	public BidDeleteResponse deleteBid(String id);
 

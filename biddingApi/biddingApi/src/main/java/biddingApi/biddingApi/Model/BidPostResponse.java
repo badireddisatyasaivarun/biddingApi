@@ -15,7 +15,9 @@ public @Data class BidPostResponse {
 	private String bidId;
 	private String transporterId;
 	private String loadId;
-	private Long rate;
+
+	private Long currentBid;
+	private Long previousBid;
 	private Unit unitValue;
 	private List<String> truckId;
 	private Boolean transporterApproval;
