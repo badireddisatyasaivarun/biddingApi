@@ -2,23 +2,20 @@ package biddingApi.biddingApi.Model;
 
 import java.util.List;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
+import biddingApi.biddingApi.Entities.BiddingData.Unit;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public @Data class BidPostRequest {
 
 	private String transporterId;
-	private Long rate;
 	private String loadId;
+	private Long currentBid;
+
+	private Unit unitValue;
 	private List<String> truckId;
-	
-	@Enumerated(EnumType.STRING)
-	private UnitValue unitValue;
-
-	public enum UnitValue{
-		PER_TON, PER_TRUCK
-	}
-
+	private String biddingDate;
 }

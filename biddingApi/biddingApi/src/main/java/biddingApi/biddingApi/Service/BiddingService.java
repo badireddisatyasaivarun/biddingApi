@@ -12,9 +12,13 @@ import biddingApi.biddingApi.Model.BidPutResponse;
 public interface BiddingService {
 
 	public BidPostResponse addBid(BidPostRequest bidPostRequest);
-	public List<BiddingData> getBid(Integer pageNo, String loadId);
+
+	public List<BiddingData> getBid(Integer pageNo, String loadId, String transporterId);
+
 	public BidDeleteResponse deleteBid(String id);
+
 	public BiddingData getBidById(String id);
+
 	public BidPutResponse updateBid(String id, BidPutRequest bidPutRequest);
-	
+
 }
